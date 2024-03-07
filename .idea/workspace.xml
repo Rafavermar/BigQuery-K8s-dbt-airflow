@@ -4,15 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9991c9b-306b-4433-af68-3ca8ad44e37a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dags/dbt_TEST.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dags/dbt_bigquery.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dags/hello.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dbt_bigquery/key_dbt_bq.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dbt_bigquery/profiles.yml" afterDir="false" />
+    <list default="true" id="f9991c9b-306b-4433-af68-3ca8ad44e37a" name="Changes" comment="quick fix">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dags/dbt_bigquery.py" beforeDir="false" afterPath="$PROJECT_DIR$/dags/dbt_bigquery.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbt_bigquery/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbt_bigquery/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbt_bigquery/analyses/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/analyses/.gitkeep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbt_bigquery/dbt_project.yml" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/dbt_project.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbt_bigquery/key_dbt_bq.json" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/key-dbt-bq.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbt_bigquery/macros/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/macros/.gitkeep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbt_bigquery/models/example/my_first_dbt_model.sql" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/models/example/my_first_dbt_model.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbt_bigquery/models/example/my_second_dbt_model.sql" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/models/example/my_second_dbt_model.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbt_bigquery/models/example/schema.yml" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/models/example/schema.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbt_bigquery/profiles.yml" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/profiles.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbt_bigquery/seeds/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/seeds/.gitkeep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbt_bigquery/snapshots/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/snapshots/.gitkeep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbt_bigquery/tests/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/tests/.gitkeep" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,13 +48,13 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/jrver/PycharmProjects/Python/K8s-dbt-GCP/dbt_bigquery"
+    "last_opened_file_path": "C:/Users/jrver/PycharmProjects/Python/K8s-dbt-GCP"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\jrver\PycharmProjects\Python\K8s-dbt-GCP\dbt_bigquery" />
       <recent name="C:\Users\jrver\PycharmProjects\Python\K8s-dbt-GCP" />
+      <recent name="C:\Users\jrver\PycharmProjects\Python\K8s-dbt-GCP\dbt_bigquery" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -64,6 +73,36 @@
       <option name="presentableId" value="Default" />
       <updated>1709807838798</updated>
     </task>
+    <task id="LOCAL-00001" summary="dag + dbt">
+      <option name="closed" value="true" />
+      <created>1709815626422</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1709815626422</updated>
+    </task>
+    <task id="LOCAL-00002" summary="dag + dbt">
+      <option name="closed" value="true" />
+      <created>1709815644042</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1709815644042</updated>
+    </task>
+    <task id="LOCAL-00003" summary="quick fix">
+      <option name="closed" value="true" />
+      <created>1709815661885</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1709815661885</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="dag + dbt" />
+    <MESSAGE value="quick fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="quick fix" />
   </component>
 </project>

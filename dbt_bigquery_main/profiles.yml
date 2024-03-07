@@ -1,10 +1,10 @@
-dbt_BigQuery:
+dbt_bigquery_main:
   outputs:
     dev:
-      dataset: dbt_BigQuery
+      dataset: dbt_bigquery_main
       job_execution_timeout_seconds: 300
       job_retries: 1
-      keyfile: "dbt_BigQuery/dbt-BigQuery.json"
+      keyfile: "key-dbt-bq.json"
       location: US
       method: service-account
       priority: interactive

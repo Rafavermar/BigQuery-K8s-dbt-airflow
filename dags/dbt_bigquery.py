@@ -20,7 +20,7 @@ with airflow.DAG(
     # KubernetesPodOperator task para ejecutar dbt run
     migrate_data = KubernetesPodOperator(
         namespace='default',
-        image='your_docker_hub_username/your_repository:your_tag',  # Cambia esto con la ruta de tu imagen en Docker Hub
+        image='jrvm/dbt_bigquery:dbt-image',
         cmds=["dbt", "run"],
         arguments=[
             "--project-dir", "./<project_dir>", "--profiles-dir", "./<project_dir>/profiles"
