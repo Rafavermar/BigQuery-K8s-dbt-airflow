@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9991c9b-306b-4433-af68-3ca8ad44e37a" name="Changes" comment="" />
+    <list default="true" id="f9991c9b-306b-4433-af68-3ca8ad44e37a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dags/dbt_TEST.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dags/dbt_bigquery.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dags/hello.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dbt_bigquery/key_dbt_bq.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dbt_bigquery/profiles.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/values.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2dMAzuA9CiCnCk98HujkRsQUKWN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -19,9 +37,17 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/jrver/PycharmProjects/Python/K8s-dbt-GCP/dbt_bigquery"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jrver\PycharmProjects\Python\K8s-dbt-GCP\dbt_bigquery" />
+      <recent name="C:\Users\jrver\PycharmProjects\Python\K8s-dbt-GCP" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
