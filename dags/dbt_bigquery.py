@@ -23,7 +23,7 @@ with airflow.DAG(
         image='jrvm/dbt_bigquery:dbt-image',
         cmds=["dbt", "run"],
         arguments=[
-            "--project-dir", "./<project_dir>", "--profiles-dir", "./<project_dir>/profiles"
+            "--project-dir", "./dbt_bigquery_main", "--profiles-dir", "./dbt_bigquery_main/profiles"
         ],
         name="dbt_transformations",
         task_id="dbt_transformations",
