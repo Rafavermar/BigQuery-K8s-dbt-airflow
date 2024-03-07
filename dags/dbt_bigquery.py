@@ -1,7 +1,6 @@
-import airflow
-
 from airflow.providers.cncf.kubernetes.operators.kubernetes_pod import KubernetesPodOperator
 from datetime import datetime, timedelta
+import airflow
 
 default_args = {
     'owner': 'airflow',
@@ -17,14 +16,13 @@ with airflow.DAG(
         catchup=False,
 ) as dag:
 
-    # KubernetesPodOperator task para ejecutar dbt run
+    # KubernetesPodOperator task to execute dbt run
     migrate_data = KubernetesPodOperator(
         namespace='default',
         image='jrvm/dbt_bigquery:dbt-image',
         cmds=["dbt", "run"],
-        arguments=[
-            "--project-dir", "/dbt/dbt_bigquery", "--profiles-dir", "/dbt/dbt_bigquery/profiles"
-        ],
+
+        arguments=["--project-dir", "/dbt"],
         name="dbt_transformations",
         task_id="dbt_transformations",
         get_logs=True
