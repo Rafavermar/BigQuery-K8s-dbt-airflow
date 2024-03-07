@@ -27,7 +27,7 @@ with airflow.DAG(
         name="dbt_transformations",
         task_id="dbt_transformations",
         get_logs=True,
-        restart_policy='Never',
+        is_delete_operator_pod=False,
     )
 
 
