@@ -22,7 +22,7 @@ with airflow.DAG(
     migrate_data = KubernetesPodOperator(
         namespace='default',
         image='jrvm/dbt_bigquery:dbt-image',
-        cmds=["dbt", "run"],
+        cmds=["dbt run"],
         # No need to specify --profiles-dir since it's in the default location
         arguments=["--project-dir", "/dbt"],
         name="dbt_transformations",
