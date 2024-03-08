@@ -10,20 +10,19 @@ default_args = {
 }
 
 with airflow.DAG(
-        'dbt_dag',
+        'dbt_dag_test',
         default_args=default_args,
         schedule_interval=timedelta(days=1),
         catchup=False,
 ) as dag:
-    migrate_data = KubernetesPodOperator(
+    test_command = KubernetesPodOperator(
         namespace='default',
         image='jrvm/dbt_bigquery:dbt-image',
-        cmds=["dbt", "run"],
-        arguments=["--project-dir", "/dbt", "--profiles-dir", "/dbt"],
-        name="dbt_transformations",
-        task_id="dbt_transformations",
+        cmds=["ls"],  # Comando a ejecutar
+        arguments=["-lah", "/dbt"],  # Argumentos del comando, lista el contenido del directorio /dbt
+        name="test_command",
+        task_id="test_command",
         get_logs=True,
         is_delete_operator_pod=False,
-        security_context={'runAsUser': 0},
+        security_context={'runAsUser': 0},  # Ejecutar como root si es necesario
     )
-
