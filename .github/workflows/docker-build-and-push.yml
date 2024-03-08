@@ -3,7 +3,7 @@ name: Build and Push Docker
 on:
   push:
     branches:
-      - main
+      - master
     paths:
       - 'dbt_bigquery_main/**'
 
