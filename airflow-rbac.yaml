@@ -1,0 +1,22 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: airflow-worker-role
+rules:
+- apiGroups: [""]
+  resources: ["pods", "pods/log", "pods/exec"]
+  verbs: ["get", "list", "watch", "create", "delete", "patch"]
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: airflow-worker-rolebinding
+subjects:
+- kind: ServiceAccount
+  name: airflow-worker
+  namespace: airflow
+roleRef:
+  kind: ClusterRole
+  name: airflow-worker-role
+  apiGroup: rbac.authorization.k8s.io
