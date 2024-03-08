@@ -28,7 +28,7 @@ customer_orders as (
 final as (
     select
         customers.id,
-        customer.first_name,
+        customers.first_name,
         customers.last_name,
         customer_orders.first_order,
         customer_orders.most_recent_order,
