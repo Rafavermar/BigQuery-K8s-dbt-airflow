@@ -24,6 +24,7 @@ with airflow.DAG(
         task_id="dbt_transformations",
         get_logs=True,
         is_delete_operator_pod=False,
+        image_pull_policy='Always',
         security_context={'runAsUser': 0},
     )
 
