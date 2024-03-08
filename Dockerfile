@@ -16,5 +16,8 @@ RUN pip install -U pip && \
 
 # Add your dbt project to the Docker image
 COPY dbt_bigquery_main .
-RUN dbt deps --project-dir .
+
+# Run dbt clean and dbt deps
+RUN dbt clean && \
+    dbt deps --project-dir .
 
