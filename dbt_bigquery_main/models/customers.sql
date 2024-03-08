@@ -1,9 +1,8 @@
 with customers as (
-        select id,
-            first_name,
-            last_name
-        from `dbt-tutorial`.jaffle_shop.customers
-
+    select id,
+           first_name,
+           last_name
+    from `dbt-tutorial`.jaffle_shop.customers
 ),
 
 orders as (
@@ -15,14 +14,13 @@ orders as (
 ),
 
 customer_orders as (
-        SELECT
-            user_id,
-            min(order_date) as first_order,
-            max(order_date) as most_recent_order,
-            count(id) as number_of_orders
-
-         from orders
-         group by user_id
+    SELECT
+        user_id,
+        min(order_date) as first_order,
+        max(order_date) as most_recent_order,
+        count(id) as number_of_orders
+    from orders
+    group by user_id
 ),
 
 final as (
@@ -34,7 +32,7 @@ final as (
         customer_orders.most_recent_order,
         customer_orders.number_of_orders
     from customers
-    left join customer_orders
+    left join  customer_orders
     on customers.id = customer_orders.user_id
 )
 
