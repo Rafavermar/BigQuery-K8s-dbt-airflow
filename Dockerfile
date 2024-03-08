@@ -22,5 +22,5 @@ RUN pip install -U pip
 RUN pip install -r requirements.txt
 
 # Add dbt_project_1 to the docker image
-COPY dbt_bigquery_main ./dbt_bigquery
-RUN ["dbt", "deps", "--project-dir", "./dbt_bigquery"]
+COPY dbt_bigquery_main ./
+RUN dbt deps --project-dir $DBT_DIR
