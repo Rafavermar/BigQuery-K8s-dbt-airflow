@@ -1,26 +1,20 @@
-
 FROM python:3.9.13
 
 # Update and install system packages
 RUN apt-get update -y && \
-  apt-get install --no-install-recommends -y -q \
-  git libpq-dev && \
-  apt-get clean && \
-  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-# Set environment variables
-ENV DBT_DIR /dbt
+    apt-get install --no-install-recommends -y -q git libpq-dev && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Set working directory
-WORKDIR $DBT_DIR
+WORKDIR /dbt_bigquery_main
 
-# Copy requirements
+# Copy requirements and install DBT
 COPY requirements.txt .
+RUN pip install -U pip && \
+    pip install -r requirements.txt
 
-# Install DBT
-RUN pip install -U pip
-RUN pip install -r requirements.txt
+# Add your dbt project to the Docker image
+COPY dbt_bigquery_main .
+RUN dbt deps --project-dir .
 
-# Add dbt_project_1 to the docker image
-COPY dbt_bigquery_main ./
-RUN dbt deps --project-dir ./
