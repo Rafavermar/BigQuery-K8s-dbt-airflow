@@ -15,18 +15,14 @@ with airflow.DAG(
         schedule_interval=timedelta(days=1),
         catchup=False,
 ) as dag:
-
     migrate_data = KubernetesPodOperator(
         namespace='default',
         image='jrvm/dbt_bigquery:dbt-image',
         cmds=["dbt", "run"],
-        arguments=[
-            "--project-dir", "/dbt",
-            "--profiles-dir", "/dbt"
-        ],
+        arguments=[],
         name="dbt_transformations",
         task_id="dbt_transformations",
         get_logs=True,
         is_delete_operator_pod=False,
-        working_dir="/dbt"
     )
+
