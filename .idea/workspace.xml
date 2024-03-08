@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9991c9b-306b-4433-af68-3ca8ad44e37a" name="Changes" comment="quick fix materialized as table">
+    <list default="true" id="f9991c9b-306b-4433-af68-3ca8ad44e37a" name="Changes" comment="seed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbt_bigquery_main/dbt_project.yml" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/dbt_project.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +46,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jrver\PycharmProjects\Python\K8s-dbt-GCP" />
       <recent name="C:\Users\jrver\PycharmProjects\Python\K8s-dbt-GCP\dbt_bigquery" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jrver\PycharmProjects\Python\K8s-dbt-GCP\dbt_bigquery_main\seeds" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -345,7 +347,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709924828800</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="seed">
+      <option name="closed" value="true" />
+      <created>1709927103639</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1709927103639</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -355,6 +365,7 @@
     <MESSAGE value="quick fix `dbt-tutorial`" />
     <MESSAGE value="quick fix customers.sql" />
     <MESSAGE value="quick fix materialized as table" />
-    <option name="LAST_COMMIT_MESSAGE" value="quick fix materialized as table" />
+    <MESSAGE value="seed" />
+    <option name="LAST_COMMIT_MESSAGE" value="seed" />
   </component>
 </project>

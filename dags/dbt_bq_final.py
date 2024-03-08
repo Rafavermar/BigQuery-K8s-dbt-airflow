@@ -15,6 +15,20 @@ with airflow.DAG(
         schedule_interval=timedelta(days=1),
         catchup=False,
 ) as dag:
+
+    seed_data = KubernetesPodOperator(
+        namespace='default',
+        image='jrvm/dbt_bigquery:dbt-image',
+        cmds=["dbt", "seed"],
+        arguments=["--project-dir", "/dbt_bigquery_main", "--profiles-dir", "/dbt_bigquery_main", "--full-refresh"],
+        name="dbt_seed",
+        task_id="dbt_seed",
+        get_logs=True,
+        is_delete_operator_pod=False,
+        image_pull_policy='Always',
+        security_context={'runAsUser': 0},
+    )
+
     migrate_data = KubernetesPodOperator(
         namespace='default',
         image='jrvm/dbt_bigquery:dbt-image',
@@ -28,3 +42,4 @@ with airflow.DAG(
         security_context={'runAsUser': 0},
     )
 
+    seed_data >> migrate_data
