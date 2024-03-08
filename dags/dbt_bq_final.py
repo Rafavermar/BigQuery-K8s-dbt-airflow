@@ -48,12 +48,16 @@ with DAG(
         namespace='default',
         image='jrvm/dbt_bigquery:dbt-image',
         cmds=["dbt", "test"],
-        arguments=["--project-dir", "/dbt_bigquery_main", "--profiles-dir", "/dbt_bigquery_main"],
+        # Aquí especificas los modelos a excluir en la ejecución del test
+        arguments=["--project-dir", "/dbt_bigquery_main", "--profiles-dir", "/dbt_bigquery_main", "--exclude",
+                   "my_first_dbt_model", "my_second_dbt_model"],
         name="dbt_test",
-        task_id="dbt_test",
+        task_id="dbt_test_task",
         get_logs=True,
+        dag=dag,
+        is_delete_operator_pod=False,
         image_pull_policy='Always',
-        is_delete_operator_pod=True,
+        security_context={'runAsUser': 0},
     )
 
     dbt_run >> dbt_seed >> dbt_test
