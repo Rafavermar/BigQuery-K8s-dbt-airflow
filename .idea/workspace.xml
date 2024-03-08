@@ -5,23 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9991c9b-306b-4433-af68-3ca8ad44e37a" name="Changes" comment="quick fix">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/airflow-logs-pvc.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dags/dbt_bigquery.py" beforeDir="false" afterPath="$PROJECT_DIR$/dags/dbt_bigquery.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbt_bigquery/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbt_bigquery/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbt_bigquery/analyses/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/analyses/.gitkeep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbt_bigquery/dbt_project.yml" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/dbt_project.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbt_bigquery/key_dbt_bq.json" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/key-dbt-bq.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbt_bigquery/macros/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/macros/.gitkeep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbt_bigquery/models/example/my_first_dbt_model.sql" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/models/example/my_first_dbt_model.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbt_bigquery/models/example/my_second_dbt_model.sql" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/models/example/my_second_dbt_model.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbt_bigquery/models/example/schema.yml" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/models/example/schema.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbt_bigquery/profiles.yml" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/profiles.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbt_bigquery/seeds/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/seeds/.gitkeep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbt_bigquery/snapshots/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/snapshots/.gitkeep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbt_bigquery/tests/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/tests/.gitkeep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/values.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,14 +30,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/jrver/PycharmProjects/Python/K8s-dbt-GCP"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jrver/PycharmProjects/Python/K8s-dbt-GCP&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jrver\PycharmProjects\Python\K8s-dbt-GCP" />
@@ -97,7 +84,87 @@
       <option name="project" value="LOCAL" />
       <updated>1709815661885</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="quick fix">
+      <option name="closed" value="true" />
+      <created>1709818601606</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1709818601606</updated>
+    </task>
+    <task id="LOCAL-00005" summary="quick fix">
+      <option name="closed" value="true" />
+      <created>1709818625530</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1709818625530</updated>
+    </task>
+    <task id="LOCAL-00006" summary="quick fix">
+      <option name="closed" value="true" />
+      <created>1709818839361</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1709818839361</updated>
+    </task>
+    <task id="LOCAL-00007" summary="quick fix">
+      <option name="closed" value="true" />
+      <created>1709819086476</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1709819086476</updated>
+    </task>
+    <task id="LOCAL-00008" summary="quick fix">
+      <option name="closed" value="true" />
+      <created>1709819358900</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1709819358900</updated>
+    </task>
+    <task id="LOCAL-00009" summary="quick fix">
+      <option name="closed" value="true" />
+      <created>1709823290950</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1709823290950</updated>
+    </task>
+    <task id="LOCAL-00010" summary="quick fix">
+      <option name="closed" value="true" />
+      <created>1709823590262</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1709823590262</updated>
+    </task>
+    <task id="LOCAL-00011" summary="quick fix">
+      <option name="closed" value="true" />
+      <created>1709824287879</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1709824287879</updated>
+    </task>
+    <task id="LOCAL-00012" summary="quick fix">
+      <option name="closed" value="true" />
+      <created>1709826042137</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1709826042137</updated>
+    </task>
+    <task id="LOCAL-00013" summary="quick fix">
+      <option name="closed" value="true" />
+      <created>1709827637132</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1709827637132</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
