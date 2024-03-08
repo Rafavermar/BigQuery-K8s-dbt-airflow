@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9991c9b-306b-4433-af68-3ca8ad44e37a" name="Changes" comment="quick fix">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/docker-build-and-push.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dbt_bigquery_main/models/customers.sql" afterDir="false" />
+    <list default="true" id="f9991c9b-306b-4433-af68-3ca8ad44e37a" name="Changes" comment="dbt new model">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbt_bigquery_main/dbt_project.yml" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/dbt_project.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbt_bigquery_main/models/example/my_first_dbt_model.sql" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/models/example/my_first_dbt_model.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,12 +256,37 @@
       <option name="project" value="LOCAL" />
       <updated>1709903047782</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="dbt new model">
+      <option name="closed" value="true" />
+      <created>1709920787184</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1709920787184</updated>
+    </task>
+    <task id="LOCAL-00026" summary="dbt new model">
+      <option name="closed" value="true" />
+      <created>1709920987994</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1709920987994</updated>
+    </task>
+    <task id="LOCAL-00027" summary="dbt new model">
+      <option name="closed" value="true" />
+      <created>1709921035953</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1709921035953</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="dag + dbt" />
     <MESSAGE value="quick fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="quick fix" />
+    <MESSAGE value="dbt new model" />
+    <option name="LAST_COMMIT_MESSAGE" value="dbt new model" />
   </component>
 </project>
