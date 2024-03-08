@@ -1,3 +1,5 @@
+{{ config(materialized='table') }}
+
 with customers as (
     select id,
            first_name,

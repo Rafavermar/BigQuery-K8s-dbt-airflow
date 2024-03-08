@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9991c9b-306b-4433-af68-3ca8ad44e37a" name="Changes" comment="quick fix `dbt-tutorial`">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="f9991c9b-306b-4433-af68-3ca8ad44e37a" name="Changes" comment="quick fix customers.sql">
+      <change beforePath="$PROJECT_DIR$/dbt_bigquery_main/models/customers.sql" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/models/customers.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -328,7 +328,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709923648010</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="quick fix customers.sql">
+      <option name="closed" value="true" />
+      <created>1709924431892</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1709924431892</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -336,6 +344,7 @@
     <MESSAGE value="dbt new model" />
     <MESSAGE value="quick fix" />
     <MESSAGE value="quick fix `dbt-tutorial`" />
-    <option name="LAST_COMMIT_MESSAGE" value="quick fix `dbt-tutorial`" />
+    <MESSAGE value="quick fix customers.sql" />
+    <option name="LAST_COMMIT_MESSAGE" value="quick fix customers.sql" />
   </component>
 </project>
