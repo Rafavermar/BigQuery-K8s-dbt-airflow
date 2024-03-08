@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9991c9b-306b-4433-af68-3ca8ad44e37a" name="Changes" comment="quick fix customers.sql">
-      <change beforePath="$PROJECT_DIR$/dbt_bigquery_main/models/customers.sql" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/models/customers.sql" afterDir="false" />
+    <list default="true" id="f9991c9b-306b-4433-af68-3ca8ad44e37a" name="Changes" comment="quick fix materialized as table">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbt_bigquery_main/dbt_project.yml" beforeDir="false" afterPath="$PROJECT_DIR$/dbt_bigquery_main/dbt_project.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -336,7 +337,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709924431892</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="quick fix materialized as table">
+      <option name="closed" value="true" />
+      <created>1709924828800</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1709924828800</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -345,6 +354,7 @@
     <MESSAGE value="quick fix" />
     <MESSAGE value="quick fix `dbt-tutorial`" />
     <MESSAGE value="quick fix customers.sql" />
-    <option name="LAST_COMMIT_MESSAGE" value="quick fix customers.sql" />
+    <MESSAGE value="quick fix materialized as table" />
+    <option name="LAST_COMMIT_MESSAGE" value="quick fix materialized as table" />
   </component>
 </project>
