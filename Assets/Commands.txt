@@ -1,0 +1,234 @@
+# YOU SHOULD HAVE INSTALLED KUBECTL AND HELM IN YOUR OS ALREADY (check URL in the repository)
+
+
+## GET KUBERNETES CONTEXT
+kubectl config get-contexts
+
+--------------------Optional ---------------------------
+	
+	kubectl config use-context kubernetes-dashboard
+	kubectl config use-context docker-desktop
+
+	## switch context (if applicable)
+	kubectl config set-context kubernetes-dashboard
+---------------------Optional---------------------------
+
+## CREATE KUBERNETES DASHBOARD POD AND ACCESS
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
+
+	### port forwarding to be able to see the dashboard on the browser
+	kubectl proxy
+
+	### to see the dashboard on the browser
+	http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+
+
+	### create configuration files to access the Kubernetes Dashboard. (note this command is for windows)
+	ni dashboard-adminuser.yaml
+	ni dashboard.clusterrole.yaml
+	ni dashboard-secret.yaml
+
+	### create the dashboard services in kubernetes to grant access
+	kubectl apply -f dashboard-adminuser.yaml
+
+	kubectl apply -f dashboard-clusterrole.yaml
+ 
+	kubectl apply -f dashboard-secret.yaml
+
+
+	### Generate the TOKEN
+
+	( open Gitbash in pycharm )
+
+	kubectl get secret admin-user -n kubernetes-dashboard -o jsonpath="{.data.token}" | base64 -d
+		
+	(copy and paste the token carefully into the dashboard autentication field)
+
+
+
+## INSTALL AIRFLOW INTO KUBERNETES CLUSTER
+	### confirm helm version installed
+	helm version
+
+	### check all the available commands
+	helm
+
+
+
+	### install airflow on kubernetes with helm
+
+	(open powershell)
+
+		#### add the airflow repo to helm locally
+		helm repo add apache-airflow https://airflow.apache.org
+
+
+		#### update helm
+		helm repo update
+
+	### Install apache airflow into Kubernetes
+	helm install airflow apache-airflow/airflow --namespace airflow --create-namespace --debug
+
+	### Create the pvc and rbac .yaml for Airflow - allows logs persistency
+
+	kubectl apply -f airflow-logs-pvc.yaml
+	kubectl get pvc -n airflow
+	kubectl apply -f airflow-rbac.yaml
+	helm upgrade --install airflow apache-airflow/airflow --namespace airflow --create-namespace -f values.yaml
+
+	---------------- nice to have just for knowing --------------
+	kubectl delete pvc airflow-logs-pvc -n airflow
+	kubectl delete statefulsets --cascade=foreground -n airflow airflow-triggerer
+	------------------------------------------------------------
+
+
+	### Once finished installation:
+
+		#### port forwarding - ables to see the Airflow UI in localhost 8080 on your browser
+		kubectl port-forward svc/airflow-webserver 8080:8080 --namespace airflow
+
+## AIRFLOW FINE SET UP
+
+	### Inside airflow in localhost 8080 we see a message about keys: " Usage of a dynamic webserver secret key detected" to solve this:
+	helm show values apache-airflow/airflow > values.yaml
+
+	### delete all the content of values.yaml, to overwrite some values. that before was an example of how to dump values from airflow to this file
+	copy the values.yaml from my repository
+
+	### Get the key (copy the key into the values.yaml-see repo)
+	echo Fernet Key: $(kubectl get secret --namespace airflow airflow-fernet-key -o jsonpath="{.data.fernet-key}" | base64 --decode)
+
+	### Upgrade Helm airflow package
+	helm upgrade --install airflow apache-airflow/airflow --namespace airflow --create-namespace -f values.yaml
+	
+	### check values passed to kubernetes cluster
+	helm get values airflow -n airflow
+
+## AIRFLOW TROUBELSHOOTING
+	### Error with airflow triggerer.
+	 delete the pod and upgrade again
+
+	kubectl delete pod airflow-triggerer-0 -n airflow
+	kubectl get pods -n kubernetes-dashboard
+
+	## CHECKING LOGS
+	kubectl logs kubernetes-dashboard-78f87ddfc-fnnjv -n kubernetes-dashboard
+	kubectl exec -it airflow-webserver-55d8b7dc7c-zbxzz -n airflow -- airflow version
+
+
+## CREATE DAGS
+	mkdir dags
+	ni dags/hello.py
+	### Install airflow locally to avoid IDE error by importing modules
+	pip install apache-airflow
+	
+	### DAG dbt_bq_final.py (dbt-full-workflow) needs the dependencies for KubernetesPodOperator
+	pip install apache-airflow-providers-cncf-kubernetes
+
+
+
+---------OPTIONAL - BONUS - GIT USEFULL COMMANDS ------------------
+## GIT ALIAS
+git config --global alias.gcmsg 'commit -m'
+[ git commit -m "Message" ]
+
+git config --global alias.ggp 'push'
+
+## show all alias
+git config --get-regexp alias
+
+## Stage all changes and commit
+git add .
+git commit -m "Added DAG script and other modifications"
+
+## stage certains changes and commit
+git add dags/ hello.py
+git commit -m "Added DAG script and dashboard admin user configuration"
+--------------------------------------------------------------------
+
+
+## INSTALL DBT-BIGQUERY
+
+	pip install dbt-bigquery
+	dbt --version
+
+	## Initialices the dbt project - project name must to be give, choose any simple name and avoid to repeat this name to other folders (check slides presentation)
+	dbt init
+	
+	## Create the profiles.yml and ensure you pass the correct path to the Google Cloud Platform credentials .json (see slides presentation)
+
+
+	---------- OPTIONAL[NOT USED] ---------- Another approach for persistency
+	kubectl create configmap dbt-profiles --from-file=Users/jrver/.dbt/profiles.yml -n airflow
+	------------------------------------------
+
+
+## KUBERNETES POD EXPLORATION AND LOGS
+
+kubectl logs airflow-scheduler-64c9c8fc6b-svpx6 -n airflow
+kubectl get pods -n airflow
+kubectl get svc -n airflow
+kubectl get deployments -n airflow
+kubectl get statefulsets -n airflow
+kubectl get jobs -n airflow
+kubectl get configmaps -n airflow
+kubectl get secrets -n <namespace>
+kubectl get all -n <namespace>
+kubectl describe pod <pod-name> -n <namespace>
+kubectl logs airflow-webserver-789dfd74dd-gqjjv -n airflow
+kubectl exec -it dbt-transformations-vs4h6f7b -- /bin/bash
+kubectl get nodes
+
+	## multiples logs
+	stern airflow -n <namespace>
+
+
+## DBT DOCKER IMAGE MANAGING (manually)
+
+	## the following indications are for manually docker image management.
+	## Remember that setting the github_build_and_push.yaml workflow this process is automated - see repository and slides
+
+	## Create the dockerfile - see my repo
+
+	## Create the requirements.txt inside the root folder of dbt project
+	pip freeze > requirements.txt
+
+	## Create image - created in docker locally
+	docker build --no-cache -t dbt-bigquery-image:latest .
+	
+	## Push image to docker hub - remember to have an account and being logged and have created a repository
+	docker push jrvm/dbt_bigquery:tagname
+
+	## run the docker image and therfore the dbt project - replace the directory according to your directory name
+	docker run dbt-bigquery-image:latest dbt run --project-dir /dbt_bigquery_main --profiles-dir /dbt_bigquery_main
+
+	## explore folders and files inside the docker image and even run "dbt debug, debt test, dbt run" to test proper function
+	docker run -it --entrypoint /bin/bash dbt-bigquery-image:latest
+	ls -la
+	### before running "dbt run" I recommend runing the following - acts as clean install dependencies
+	dbt clean
+	dbt deps
+
+
+
+----------- nice to have ------------- # untag and delete image from docker
+docker rmi dbt-bigquery-image:latest
+docker ps -a
+docker rm dbt-bigquery-image
+docker rmi my-airflow-image:latest
+--------------------------------------
+
+
+## CHECK CONFIGURATION OF THE SERVICEACCOUNT AND CLUSTERROLEBINDING
+
+kubectl get serviceaccounts -n kubernetes-dashboard
+kubectl get serviceaccount --namespace airflow
+
+## ServiceAccount details for user admin-user - Secrets related:
+kubectl describe serviceaccount admin-user -n kubernetes-dashboard
+
+## List ClusterRoleBindings and search by admin-user as user
+kubectl get clusterrolebindings
+
+## Details of ClusterRoleBinding for admin-user
+kubectl describe clusterrolebinding admin-user
