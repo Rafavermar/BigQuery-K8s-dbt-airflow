@@ -19,7 +19,7 @@ This repository showcases a complete workflow for automating BigQuery transforma
 ## Repository Structure
 
 The repository is organized into several key directories and files:
-![Project_architecture.png](Assets%2FProject_architecture.png)
+![Project_directories.png](Assets%2FProject_directories.png)
 
 ## Getting Started
 
