@@ -39,6 +39,7 @@ The repository is organized into several key directories and files:
    docker build --no-cache -t dbt-bigquery-image:latest .
    docker tag dbt-bigquery-image jrvm/dbt_bigquery:dbt-image
    docker push jrvm/dbt_bigquery:dbt-image
+   ```
 2. **Deploy Apache Airflow on Kubernetes:** You can use Helm or custom YAML files to deploy Apache Airflow on your Kubernetes cluster.
 
  ```bash
